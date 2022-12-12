@@ -1,6 +1,56 @@
-# Need to Run Bookify Backend Before npm start
+# Bookify Backend Should be in running state before npm start
 Clone the Backend and install all dependancies AND
 MongoDB should be insatlled in the system
+
+### HOME PAGE (Dark And Light Theme)
+![image](https://user-images.githubusercontent.com/106900914/206996236-f3f80943-d0a6-4b00-9d5a-1677d7c79558.png)
+![image](https://user-images.githubusercontent.com/106900914/206999542-c3e85636-4dbe-47da-a3b3-147a5ca2544f.png)
+
+###Sign Up
+![image](https://user-images.githubusercontent.com/106900914/206996573-3c36935a-d365-4487-a72c-b79a43148409.png)
+
+### Sign up a user and change role in the DB "role" : 1
+![image](https://user-images.githubusercontent.com/106900914/206995997-4bc12041-8441-4643-ba24-42faf2ae6421.png)
+
+### Sign in with Admin user (role:1)
+![image](https://user-images.githubusercontent.com/106900914/206997209-b2617644-0639-40ad-8d00-da9beae14ed6.png)
+
+### Admin Dashboard will open on successfull admin sign in
+![image](https://user-images.githubusercontent.com/106900914/206997485-18103efe-a729-455d-af68-ab557890c627.png)
+
+### Create Category
+![image](https://user-images.githubusercontent.com/106900914/206998772-ec864816-fbe4-48df-a3f8-437b9c62eb24.png)
+
+### Manage Category
+![image](https://user-images.githubusercontent.com/106900914/206998924-bfc885ab-1cf1-4052-810d-387813d542e9.png)
+
+### Add Books
+![image](https://user-images.githubusercontent.com/106900914/206999054-3348c876-ab3d-466a-8f83-d5816bee8773.png)
+
+### Manage Products
+![image](https://user-images.githubusercontent.com/106900914/206999123-4d4bbff0-72b8-435b-bcd1-d39139aa7ba7.png)
+
+### Manage  Orders
+![image](https://user-images.githubusercontent.com/106900914/206999300-17988869-9eef-4333-8b8d-36e932ed7223.png)
+
+### Normal User Home Page
+![image](https://user-images.githubusercontent.com/106900914/206999994-e0830864-7232-4635-9563-5b2b29a3f91c.png)
+
+### Card Hover State
+![image](https://user-images.githubusercontent.com/106900914/207000316-a8a5b697-81fb-4820-aaa2-2b877599d6df.png)
+
+### Add To Cart Clicked
+![image](https://user-images.githubusercontent.com/106900914/207000542-c075027d-bb32-42d5-8f5d-8e4c10f9c15b.png)
+
+### Buy Clicked
+![image](https://user-images.githubusercontent.com/106900914/207000661-0b859c53-8a93-4200-871a-7913bcffa2ea.png)
+
+### Payment Processing
+![image](https://user-images.githubusercontent.com/106900914/207000804-7b06bcf3-e4b8-4e34-b94a-1e0ae7882028.png)
+
+### View all orders at dashboard
+![image](https://user-images.githubusercontent.com/106900914/207000978-70680a49-4e26-4759-a8bc-8a7e4f6fa57b.png)
+
 
 # Getting Started with Create React App
 
