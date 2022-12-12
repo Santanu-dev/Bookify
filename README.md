@@ -1,3 +1,7 @@
+# Need to Run Bookify Backend Before npm start
+Clone the Backend and install all dependancies AND
+MongoDB should be insatlled in the system
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
