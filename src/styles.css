@@ -1,0 +1,61 @@
+:root{
+  /* --dark-bg: #343a40; */
+  --dark-bg: linear-gradient(#0F2027, #203A43, #2C5364);
+  /* --light-bg: #EFEEF1; */
+  --light-bg: linear-gradient(#ADA996, #F2F2F2, #DBDBDB, #EAEAEA);
+  --text-white: #fff;
+  --text-dark: #343a45;
+  /* --nav-bg: #172337; */
+  --nav-bg: linear-gradient(45deg, #141e35, #243b55);
+  --nav-bg-lite: #ffffff;
+  /* --nav-bg-lite: linear-gradient(#efefbb, #d4d3dd); */
+  --footer-clr: #172337;
+  /* --footer-clr: linear-gradient(45deg, #141e35, #243b55); */
+  --footer-clr-lite: #ffffff;
+  /* --footer-clr-lite: linear-gradient(#efefbb, #d4d3dd); */
+  --active-tab: rgba(110, 107, 107, 0.333);
+  --form-bg: #172337;
+}
+
+*,::before,::after{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  transition: color 300ms ease;
+}
+
+.light {
+  background: url("flying-books.png"), var(--light-bg);
+  background-position: left;
+  background-repeat: no-repeat;
+  color: var(--text-dark);
+}
+.dark {
+  background: url("flying-books.png"), var(--dark-bg);
+  background-position: left;
+  background-repeat: no-repeat;
+  color: var(--text-white);
+  animation: bg 200ms ease-in-out forwards;
+}
+
+@keyframes bg {
+  0%{
+    opacity: 0.1;
+  }
+
+  25%{
+    opacity: 0.4;
+  }
+
+  50%{
+    opacity: 0.8;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}

@@ -1,0 +1,65 @@
+.orderCard{
+    font-size: 24px;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 23%;
+    width: 55vw;
+    /* background: #fff7; */
+    border: 5px solid var(--footer-clr);
+    border-radius: 5px;
+    transition: box-shadow 200ms ease-in;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.orderCard2{
+    font-size: 24px;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 2%;
+    width: 55vw;
+    /* background: #fff7; */
+    border-radius: 5px;
+    transition: box-shadow 200ms ease-in;
+    padding: 10px;
+}
+
+.orderAmount{
+    width: 33%;
+}
+
+.orderName{
+    width: 33%;
+    border: 1px solid currentColor;
+    padding: 10px;
+}
+
+.orderCard:hover{
+    box-shadow: 0 0 10px #fff8;
+}
+
+.orderCard2:hover{
+    box-shadow: 0 0 10px #fff8;
+}
+
+@media screen and (width < 750px) {
+    .orderCard{
+        font-size: 16px;
+        width: 95vw;
+        margin: 10px 10px;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (750px < width < 1200px) {
+    .orderCard{
+        width: 95vw;
+        margin: 10px 20px;
+    }
+}

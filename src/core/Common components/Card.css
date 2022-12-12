@@ -1,0 +1,207 @@
+.card-element{
+    font-size: 24px;
+    position: relative;
+    width: 13em;
+    height: 15em;
+    padding: 10px 10px;
+    margin-bottom: 1.3em;
+}
+
+.card-element > .card-image >img{
+    width: 13em;
+    height: 15em;
+    border: 3px solid var(--footer-clr);
+    border-radius: 10px;
+    position: relative;
+    opacity: 0.9;
+    transition: all 300ms ease-in-out;
+}
+
+.card-element > .card-title{
+    background: var(--footer-clr);
+    border-radius: 1em;
+    padding: 0 8px;
+    position: absolute;
+    color: #f4f4f4;
+    z-index: 1;
+    left: 5%;
+    top: 85%;
+    font-size: 0.9em;
+    font-weight: 800 !important;
+    transition: all 300ms ease-in-out;
+}
+
+.card-element:hover > .card-title{
+    top: 10%;
+}
+
+.card-element:hover > .card-image >img{
+    opacity: 0.2;
+    box-shadow: 0 0 10px #0008;
+}
+
+.card-element > .card-content{
+    display: none;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    transform: translateY(15em);
+}
+
+.card-element:hover > .card-content{
+    display: block;
+    animation: desc_transform 300ms ease-in-out forwards;
+}
+
+@keyframes desc_transform {
+    0%{
+        opacity: 0;
+        transform: translateY(15em);
+    }
+
+    60%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.card-element > .card-content > .card-desc{
+    font-size: 0.7em;
+    padding: 0 8px;
+    color: var(--text-dark);
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
+.dark-mode > .card-content > .card-desc{
+    color: var(--text-white);
+}
+
+.card-element > .card-content > .card-button{
+    display: flex;
+    margin-top: 1em;
+    justify-content: center;
+}
+
+.buy-btn{
+    font-size: 0.7em;
+    border: 2px solid #0001;
+    padding: 0.5em 1.5em;
+    margin-right: 1em;
+    border-radius: 0.9em;
+    background: #0f9621;
+    color: #f4f4f4;
+}
+.buy-btn:active, .cart-btn:active{
+    transform: scale(1.1);
+}
+
+.card-element > .card-content > .card-button > .cart-btn:hover{
+    background: #f4f4f4;
+    color: #00ADDD;
+    border: 2px solid #00ADDD;
+}
+.buy-btn:hover{
+    background: #f4f4f4;
+    color: #0f9621;
+    border: 2px solid #0f9621;
+}
+
+.card-element > .card-content > .card-button > .cart-btn{
+    font-size: 0.7em;
+    padding: 0.5em 1.5em;
+    border: 2px solid #0001;
+    padding: 5px 1rem;
+    border-radius: 20px;
+    background: #00ADDD;
+    color: #f4f4f4;
+}
+
+.price{
+    width: 13em;
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: var(--footer-clr);
+    background: #8d51fd;
+    border-radius: 7px;
+}
+
+.desc{
+    --max-lines: 3;
+    --line-height: 1.4;
+
+    max-height: calc(var(--max-lines) * 1em * var(--line-height));
+    line-height: var(--line-height);
+
+    overflow: hidden;
+    position: relative;
+}
+
+.desc:has(+ .see-more:not(:checked))::before{
+    content: '';
+    position: absolute;
+    height: calc(1em * var(--line-height));
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+    /* background: linear-gradient(to bottom, transparent, var(--light-bg)); */
+}
+
+.see-more{
+    transform: translateY(-100%);
+    appearance: none;
+    cursor: pointer;
+    margin-top: 0em;
+    padding: 0.5em 0;
+    color: #00ADDD;
+}
+.see-more:hover{
+    transform: translateY(-100%);
+    color: #1491b8;
+}
+
+.see-more::before{
+    content: "See more...";
+    
+}
+
+.see-more:checked::before{
+    content: "close";
+}
+
+.desc:has(+ .see-more:checked){
+    max-height: none;
+}
+
+
+@media screen and (width < 750px) {
+    .card-element{
+        font-size: 14px;
+        padding: 0;
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (width < 500px) {
+    .card-element{
+        font-size: 10px;
+        padding: 0;
+        margin-bottom: 1em;
+    }
+    .card-element > .card-content > .card-button > .buy-btn{
+        font-size: 0.7em;
+        padding: 0.5em 0.8em;
+        margin-right: 0.5em;
+    }
+    .card-element > .card-content > .card-button > .cart-btn{
+        font-size: 0.7em;
+        padding: 0.5em 1em;
+        border-radius: 20px;
+    }
+}

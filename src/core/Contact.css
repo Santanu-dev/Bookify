@@ -1,0 +1,24 @@
+.contact-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.contact-details{
+    margin: 0 5%;
+}
+
+.contact-details > p{
+    font-size: 18px;
+}
+
+.messegeForm{
+    margin: 0% 20%;
+}
+
+@media screen and (width < 500px) {
+    .contact-details > p {
+        font-size: 8px;
+    }
+}

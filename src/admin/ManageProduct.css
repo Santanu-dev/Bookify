@@ -1,0 +1,11 @@
+.manage-product{
+    height: 100%;
+    width: 60vw;
+    /* background: var(--footer-clr-lite); */
+    border: 2px solid var(--footer-clr);
+    margin: 0% 5%;
+}
+
+.sub-heading{
+    margin-left: 5%;
+}

@@ -1,0 +1,71 @@
+.body{
+    position: relative;
+}
+
+.color-picker{
+    position: absolute;
+    z-index: 2;
+    top: 40vh;
+    left: 95vw;
+}
+
+.themeSelector > .theme-btns{
+    margin: 8px 10px;
+}
+
+.visually-hidden{
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.color-picker > .themeSelector{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    gap: 2rem;
+    background: rgb(218, 218, 218);
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+}
+
+.color-picker > .themeSelector > .theme-btns > input[type="radio"]{
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    outline: 3px solid var(--radio-clr, currentColor);
+    outline-offset: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.color-picker > .themeSelector > .theme-btns > input[type="radio"]#dark{
+    --radio-clr: #172337; 
+}
+
+.color-picker > .themeSelector > .theme-btns > input[type="radio"]:checked{
+    background-color: var(--radio-clr);
+}
+
+.color-picker > .themeSelector > .theme-btns > input[type="radio"]#light{
+    --radio-clr: rgb(255, 255, 255); 
+}
+
+@media screen and (width < 1600px) {
+    .color-picker{
+        top: 50vh;
+        left: 85vw;
+    }
+    .color-picker > .themeSelector{
+        gap: 1rem;
+        background: rgb(218, 218, 218);
+        padding: 1rem 0.5rem;
+        border-radius: 1rem;
+    }
+}

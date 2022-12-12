@@ -1,0 +1,40 @@
+.home-section{
+    margin: 20px 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: home 500ms ease-in-out forwards;
+    min-height: 51vh;
+}
+.brand-heading{
+    margin: 0px 10%;
+    padding: 10px 0;
+}
+
+.product-section{
+    min-height: 55vh;
+}
+
+@keyframes home {
+    from {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@media screen and (width < 750px) {
+    .home-section{
+        gap: 5px;
+    }
+    .d-flex{
+        flex-direction: column;
+    }
+
+}
+
