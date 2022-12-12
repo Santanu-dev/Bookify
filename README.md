@@ -1,3 +1,6 @@
+![lgBlack](https://user-images.githubusercontent.com/106900914/207003884-ec1a82a0-31d3-403f-abd2-0530aeeb829d.png)
+# Bookify is a Book selling website developed using MERN stack
+
 # Bookify Backend Should be in running state before npm start
 Clone the Backend and install all dependancies AND
 MongoDB should be insatlled in the system
