@@ -138,7 +138,7 @@ const AdminDashboard = ({ history }) => {
     <Base theme={localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light'}>
       <div className="admin-area">
         <div className="left-panel">{leftpanel(history)}</div>
-        <div className="right-panel m-2">{rightpanel(totalUsers, totalOrders, products)}</div>
+        <div className="right-panel aDash m-2">{rightpanel(totalUsers, totalOrders, products)}</div>
       </div>
     </Base>
   );
