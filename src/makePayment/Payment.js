@@ -8,6 +8,7 @@ import { isAuthenticated } from '../auth/helper'
 import "./Payment.css"
 import Base from '../core/Base'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import LoadingSpinner from '../core/Common components/LoadingSpinner'
 
 const Payment = ({ match }) => {
 
@@ -28,6 +29,7 @@ const Payment = ({ match }) => {
   const [ quantity, setQuantity] = useState(1);
   const [ amount, setAmount] = useState(0);
   const [ cardDetailsSection, setCardDetailsSection] = useState(false);
+  const [ loading, setLoading] = useState(true);
 
   const getAToken = (userId, token) => {
     getToken(userId, token).then(res => {
@@ -114,6 +116,7 @@ const Payment = ({ match }) => {
 
             removeItemFromCart(product._id);
             setRedirect(true);
+            setLoading(true)
           })
           .catch(err => {
             setInfo({loading: false, success: false})
@@ -122,7 +125,7 @@ const Payment = ({ match }) => {
         })
   }
 
-  const showDropInUI = () => {
+  const showDropInUI = (loading) => {
     return (
       <>
       {info.clientToken !== null ? 
@@ -131,8 +134,8 @@ const Payment = ({ match }) => {
             options={{ authorization: info.clientToken }}
             onInstance={(instance) => setInfo({...info, instance: instance})}
           />
-          <button className='buy-btn payNow m-4' onClick={onPay}>Buy</button>
-          <button className='buy-btn payNow m-4' onClick={() => setCardDetailsSection(false)}>Close</button>
+          {!loading &&<button className='buy-btn payNow m-4' onClick={onPay}>Buy</button>}
+          {!loading &&<button className='buy-btn payNow m-4' onClick={() => setCardDetailsSection(false)}>Close</button>}
         </div>
            : <h1 className='text-center'>Please Login...Payment Gateway Error! Try Again Later</h1>}
       </>
@@ -155,27 +158,39 @@ const Payment = ({ match }) => {
         <div className='makePayDetails'>
           <div className='prodName'>Book Name: {product.name}</div>
           <div className='prodName'>Price: &#x20B9; {product.price}</div>
-          <div className='quants'>
+          {!cardDetailsSection && <div className='quants'>
             <label>Quantity(Max 5): </label>
             <div className='btns neg' onClick={handleMinusClick}><FontAwesomeIcon icon="fa-solid fa-minus" /></div>
             <div>{quantity}</div>
             <div className='btns' onClick={handlePlusClick} ><FontAwesomeIcon icon="fa-solid fa-plus" /></div>
-          </div>
+          </div>}
           <div className='mt-4 bg-success p-2'>Total Bill: {amount}</div>
         </div>
-        {!cardDetailsSection &&<button className='buy-btn text-center proceed' onClick={() => {setCardDetailsSection(true)}}>Proceed With Payment</button>}
-        {cardDetailsSection && <div className='payment-info'>{showDropInUI()}</div>}
+        {!cardDetailsSection && !info.loading &&<button className='buy-btn text-center proceed' onClick={() => {setCardDetailsSection(true)}}>Proceed With Payment</button>}
+        {cardDetailsSection && setTimeout(() => {
+            setLoading(false);
+        }, 2000)}
+        {cardDetailsSection && loading ? <LoadingSpinner /> : "" }
+
+        {cardDetailsSection && <div className='payment-info'>{showDropInUI(loading)}</div>}
         {/* {redirect ? <Redirect to="/" /> : ""} */}
-        </>   : 
-      info.success ?
-      <div className='pay-con-sec'>
-        <p className='pay-confirm text-center bg-success text-dark border border-success' 
-        style={{height: "50vh"}}>
-          Thank You! Payment Successfully Compoleted.
-          <p>Click here to see your order status <Link style={{color: "#000"}} to="/user/dashboard">Dashboard</Link></p>
-        </p>
-      </div>
-       : ""}
+        </>   
+        : 
+        <>
+          {info.success && setTimeout(() => {
+            setLoading(false)
+          }, 2000)} 
+          {info.success && !loading  ?
+          <div className='pay-con-sec'>
+            <p className='pay-confirm text-center bg-success text-dark border border-success' 
+            style={{height: "50vh"}}>
+              Thank You! Payment Successfully Compoleted.
+              <p>Click here to see your order status <Link style={{color: "#000"}} to="/user/dashboard">Dashboard</Link></p>
+            </p>
+          </div>
+          : <LoadingSpinner />}
+        </>}
+      
     </Base>
   )
 }

@@ -1,0 +1,120 @@
+.loadingSpinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    left: 28%;
+    box-shadow: 0 0 100vw 100vh #0009;
+}
+
+.app-spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 54px;
+    height: 10em;
+    width: 15em;
+    z-index: 5;
+    background: #001C2F;
+    gap: 5px;
+    border: 5px solid #0007;
+}
+
+.loading-message{
+    text-transform: uppercase;
+    color: aliceblue;
+}
+
+.animate-boxes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 20px 0;
+    gap: 60px;
+    perspective: 1000px;
+}
+
+.box{
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(155deg) rotateY(30deg);
+}
+
+.box > .t , .b, .l, .r, .f, .back{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: rgb(19, 126, 226, 0.5);
+    box-shadow: 0 0 3px #f4f4f4;
+    opacity: 0.5;
+}
+
+.f {
+    transform: translateZ(10px);
+    animation: animateBoxheight 800ms ease infinite;
+}
+.t {
+    transform: rotateX(90deg) translateZ(10px);
+}
+.r {
+    transform: rotateY(90deg) translateZ(10px);
+    animation: animateBoxheight 800ms ease infinite;
+}
+.l {
+    transform: rotateY(-90deg) translateZ(10px);
+    animation: animateBoxheight 800ms ease infinite;
+}
+.b {
+    transform: rotateX(-90deg) translateZ(10px);
+    animation: animateTransform 800ms ease infinite;
+}
+.back {
+    transform: rotateY(-180deg) translateZ(10px);
+    animation: animateBoxheight 800ms ease infinite;
+}
+
+@keyframes animateBoxheight {
+    from{
+        height: 20px;
+    }
+    to{
+        height: 2px;
+    }
+}
+
+@keyframes animateTransform {
+    from{
+        transform: rotateX(90deg) translateZ(-10px);
+    }
+    to{
+        transform: rotateX(90deg) translateZ(10px);
+    }
+}
+
+@media screen and (width < 750px) {
+    .loadingSpinner{
+        top: 40%;
+        left: 4%;
+    }
+    .app-spinner{
+        font-size: 24px
+    }
+}
+
+@media screen and (750px < width < 1200px) {
+    .loadingSpinner{
+        top: 40%;
+        left: 15%;
+    }
+    .app-spinner{
+        font-size: 40px
+    }
+}
+
+
+
+
+
