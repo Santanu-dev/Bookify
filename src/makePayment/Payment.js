@@ -134,8 +134,8 @@ const Payment = ({ match }) => {
             options={{ authorization: info.clientToken }}
             onInstance={(instance) => setInfo({...info, instance: instance})}
           />
-          {!loading &&<button className='buy-btn payNow m-4' onClick={onPay}>Buy</button>}
-          {!loading &&<button className='buy-btn payNow m-4' onClick={() => setCardDetailsSection(false)}>Close</button>}
+          {!loading &&<button className='buy-btn payNow m-2' onClick={onPay}>Buy</button>}
+          {!loading &&<button className='buy-btn payNow m-2' onClick={() => setCardDetailsSection(false)}>Close</button>}
         </div>
            : <h1 className='text-center'>Please Login...Payment Gateway Error! Try Again Later</h1>}
       </>

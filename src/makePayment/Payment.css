@@ -68,7 +68,7 @@
     }
     
     .payNow {
-            font-size: 2.7em;
+            font-size: 2.2em;
     }
     .makePayDetails{
         font-size: 18px;
@@ -88,6 +88,9 @@
         font-size: 18px;
         margin: 50px 22%;
         width: 60vw;
+    }
+    .dropIn{
+        width: 350px;
     }
 }
 
