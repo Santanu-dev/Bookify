@@ -92,7 +92,7 @@
         width: 35px;
         height: 35px;
         background-color: var(--light-bg);
-        margin: 0 2rem;
+        margin: 0 1.5rem;
         border-radius: 50%;
         position: relative;
         transform: translateY(-5px);
