@@ -1,13 +1,14 @@
 :root{
   /* --dark-bg: #343a40; */
-  --dark-bg: linear-gradient(#0F2027, #203A43, #2C5364);
-  /* --light-bg: #EFEEF1; */
-  --light-bg: linear-gradient(#ADA996, #F2F2F2, #DBDBDB, #EAEAEA);
+  --dark-bg: #0f1624;
+  /* --dark-bg: linear-gradient(#0F2027, #203A43, #2C5364); */
+  --light-bg: #f4f4f4;
+  /* --light-bg: linear-gradient(#ADA996, #F2F2F2, #DBDBDB, #EAEAEA); */
   --text-white: #fff;
   --text-dark: #343a45;
   /* --nav-bg: #172337; */
   --nav-bg: linear-gradient(45deg, #141e35, #243b55);
-  --nav-bg-lite: #ffffff;
+  --nav-bg-lite: rgba(253, 253, 253, 0.85);
   /* --nav-bg-lite: linear-gradient(#efefbb, #d4d3dd); */
   --footer-clr: #172337;
   /* --footer-clr: linear-gradient(45deg, #141e35, #243b55); */
@@ -26,6 +27,26 @@
   font-family: 'Times New Roman', Times, serif;
   font-weight: 700;
   transition: color 300ms ease;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .light {
