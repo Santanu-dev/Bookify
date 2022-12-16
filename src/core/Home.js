@@ -7,6 +7,7 @@ import { getAllProducts } from "./helper/coreapicalls";
 import Pagination from "./Common components/Pagination";
 import SearchBar from "./Common components/SearchBar";
 import { Link } from "react-router-dom";
+import BestSellerCarousel from "./Common components/BestSellerCarousel";
 
 export default function Home() {
 
@@ -62,16 +63,20 @@ export default function Home() {
       <Base theme={theme} handleClick={handleClick}>
       
       <div className="product-section">
-        <h1 className="text-center brand-heading" style={theme == 'light' ? { color: "var(--footer-clr)"}: { color: "var(--text-white)"}}>Welcome To <span className="brand">Bookify</span></h1>
-          <p className="m-2 text-center text-muted" style={theme == 'light' ? {color: "var(--footer-clr)"} : {color: "var(--text-white)"}}>A Place to Start your Own Nerdy Journey...</p>
-      {products.length === 0 ? 
+        <div className="home-header">
+          <h1 className="text-center brand-heading" style={theme == 'light' ? { color: "var(--footer-clr)"}: { color: "var(--text-white)"}}>Welcome To <span className="brand">Bookify</span></h1>
+          <p className="m-2 text-center text-muted" style={theme == 'light' ? {color: "var(--footer-clr)"} : {color: "var(--text-white)"}}>A Place to Start your Bookish Journey...</p>
+        </div>
+        <h2 className="d-flex justify-content-between" style={{color: theme == 'light' ? "var(--footer-clr)" : "var(--text-white)", margin: "20px 10%"}}>Books You Might Like... <SearchBar setProducts={setProducts} /></h2>
+        <BestSellerCarousel />
+        {products.length === 0 ? 
         <h2 className="text-center m-4 bg-danger" style={{color: theme == 'light' ? "var(--footer-clr)" : "var(--text-white)", margin: "20px 10%"}}>No Books Found... <button className="btn btn-primary m-2 p-3" onClick={reloadToggle} style={{color: "#000"}} > <i class="fa fa-arrow-left" style={{fontSize: "50px"}} aria-hidden="true"></i></button></h2> 
         : 
          <> 
-         <h2 className="d-flex justify-content-between" style={{color: theme == 'light' ? "var(--footer-clr)" : "var(--text-white)", margin: "20px 10%"}}>All Available Books... <SearchBar setProducts={setProducts} /></h2>
+         <h2 className="d-flex justify-content-between" style={{color: theme == 'light' ? "var(--footer-clr)" : "var(--text-white)", margin: "20px 10%"}}>All Available Books... </h2>
           <div className="home-section">
             {products.map((product, index) => {
-              return <Card theme={theme} key={index} reload={false} product={product} addToCart={true} />;
+              return <Card theme={theme} key={index} reload={false} product={product} addToCart={true} disabled={false} />;
             })}
           </div>
           </> }

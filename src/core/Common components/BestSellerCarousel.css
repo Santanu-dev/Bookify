@@ -1,0 +1,22 @@
+.slider{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 20px 10%;
+}
+
+.slider{
+    scroll-snap-type: x mandatory;
+}
+
+.slider > *{
+    scroll-snap-align: start;
+}
+
+/* width */
+::-webkit-scrollbar {
+    height: 7px;
+  }

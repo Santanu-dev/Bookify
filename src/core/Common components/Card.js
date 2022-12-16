@@ -4,7 +4,7 @@ import CardImageHelper from './CardImageHelper'
 import { Link, Redirect } from 'react-router-dom'
 import { addProductsToCart, removeFromCart } from './CartHelper'
 
-const Card = ( { product, addToCart, reload = undefined, setReload = justReload => justReload, theme} ) => {
+const Card = ( { product, addToCart, reload = undefined, setReload = justReload => justReload, theme, disabled} ) => {
 
   const [redirect, setRedirect] = useState(false);
 
@@ -26,7 +26,7 @@ const Card = ( { product, addToCart, reload = undefined, setReload = justReload 
   }
 
   return (
-    <div className={ theme == 'light' ? 'card-element' : 'card-element dark-mode' }>
+    <div className={ theme == 'light' ? (disabled ? 'card-element disabled' : "card-element") : (disabled ? 'card-element dark-mode disabled' : "card-element dark-mode") }>
         <div className='card-title'>{product.name}</div>
         {getRedirect(redirect)}
         <CardImageHelper product={product} />
