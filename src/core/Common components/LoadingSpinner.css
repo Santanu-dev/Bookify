@@ -1,4 +1,13 @@
-.loadingSpinner{
+.loading-spinner{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    z-index: 20;
+    background: #0009;
+    box-shadow: 0 0 100vw 100vh #0009;
+}
+
+/* .loadingSpinner{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +121,9 @@
     .app-spinner{
         font-size: 40px
     }
-}
+} */
+
+
 
 
 
