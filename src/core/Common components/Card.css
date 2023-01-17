@@ -190,18 +190,21 @@
 
 @media screen and (width < 500px) {
     .card-element{
-        font-size: 10px;
+        font-size: 16px;
         padding: 0;
-        margin-bottom: 1em;
+        margin-bottom: 0.5em;
+    }
+    .card-element > .card-content > .card-button{
+        margin-left: 5px;
     }
     .card-element > .card-content > .card-button > .buy-btn{
         font-size: 0.7em;
-        padding: 0.5em 0.8em;
-        margin-right: 0.5em;
+        padding: 0em;
+        margin: 0em;
     }
     .card-element > .card-content > .card-button > .cart-btn{
         font-size: 0.7em;
-        padding: 0.5em 1em;
-        border-radius: 20px;
+        padding: 0.4em;
+        border-radius: 15px;
     }
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Search.css'
 import { getSearchedProducts } from './SearchHelper';
 
-const SearchBar = ({ setProducts }) => {
+const SearchBar = ({ setProducts, setSearchClick }) => {
 
   const [searchText, setSearchText] = useState("");
 
@@ -13,6 +13,7 @@ const SearchBar = ({ setProducts }) => {
   const handleClick = (event) => {
     event.preventDefault();
     getSearchedProducts(searchText).then(res => {
+      setSearchClick(true);
       setProducts(res);
     })
   }
