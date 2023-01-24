@@ -70,7 +70,7 @@
 }
 
 .card-element > .card-content > .card-desc{
-    font-size: 0.7em;
+    font-size: 0.55em;
     padding: 0 8px;
     color: var(--text-dark);
     display: -webkit-box;

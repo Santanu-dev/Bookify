@@ -64,6 +64,7 @@ const LoadingSpinner = () => {
         innerCircleColor=""
         middleCircleColor=""
       />
+      <p className="text-white text-center">please wait, fetching data from server...</p>
     </div>
     
   );

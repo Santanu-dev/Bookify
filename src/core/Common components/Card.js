@@ -3,6 +3,7 @@ import "./Card.css"
 import CardImageHelper from './CardImageHelper'
 import { Link, Redirect } from 'react-router-dom'
 import { addProductsToCart, removeFromCart } from './CartHelper'
+import Ratings from './Ratings'
 
 const Card = ( { product, addToCart, reload = undefined, setReload = justReload => justReload, theme, disabled} ) => {
 
@@ -32,6 +33,7 @@ const Card = ( { product, addToCart, reload = undefined, setReload = justReload 
         <CardImageHelper product={product} />
         <div className='card-content'>
             <div className='card-desc'>{product.description}</div>
+            <Ratings currRating={product.rating ? product.rating : "4"} />
             <div className='price'>&#x20B9;{product.price}</div>
             <div className='card-button'>
               <Link to={"/make/payment/" + product._id} >
