@@ -4,6 +4,7 @@ import Card from "./Common components/Card";
 import { loadCart, removeFromCart } from "./Common components/CartHelper";
 import './Cart.css'
 import { Link } from "react-router-dom";
+import BestSellerCarousel from "./Common components/BestSellerCarousel";
 
 const Cart = () => {
 
@@ -104,6 +105,8 @@ const Cart = () => {
             }
             
         </div>
+            <div className="cart-header text-left">People Also Viewed...</div>
+        <BestSellerCarousel />
       </Base>
     </>
   );
